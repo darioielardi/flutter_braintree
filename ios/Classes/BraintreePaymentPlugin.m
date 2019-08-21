@@ -46,6 +46,7 @@ FlutterResult _flutterResult;
 
 - (void)showDropIn:(NSString *)clientTokenOrTokenizationKey withResult:(FlutterResult)flutterResult {
     BTDropInRequest *request = [[BTDropInRequest alloc] init];
+    request.vaultManager = YES;
     
    BTDropInController *dropInController = [[BTDropInController alloc] initWithAuthorization:clientTokenOrTokenizationKey request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         

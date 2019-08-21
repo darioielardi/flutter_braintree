@@ -61,7 +61,7 @@ public class BraintreePaymentPlugin implements MethodCallHandler, ActivityResult
   }
 
     void payNow(){
-          DropInRequest dropInRequest = new DropInRequest().clientToken(clientToken);
+          DropInRequest dropInRequest = new DropInRequest().clientToken(clientToken).vaultManager(true);
           if(enableGooglePay){
             enableGooglePay(dropInRequest);
           }
